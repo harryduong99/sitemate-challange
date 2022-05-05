@@ -3,8 +3,9 @@ package rest_issues
 import (
 	"encoding/json"
 	"github/harryduong99/sitemate/apis"
-	"github/harryduong99/sitemate/issue_repository"
 	"github/harryduong99/sitemate/models"
+	issue_repository "github/harryduong99/sitemate/repository/issue"
+
 	"net/http"
 )
 
@@ -20,8 +21,7 @@ func Create(response http.ResponseWriter, request *http.Request) {
 	var issue models.Issue
 	_ = json.NewDecoder(request.Body).Decode(&issue)
 
-	err := issue_repository.Store(issue)
-
+	err := issue_repository.IssueRepository.Store(issue)
 	if err != nil {
 		apis.ResponseWithError(response, http.StatusBadRequest, "Something went wrong!")
 		return

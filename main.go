@@ -1,10 +1,8 @@
 package main
 
-import (
-	"github/harryduong99/sitemate/apis"
-)
+import "github/harryduong99/sitemate/route"
 
 func main() {
-	apis.InitRoutes()
+	route.InitRoutes()
 
 }

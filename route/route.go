@@ -1,10 +1,9 @@
-package apis
+package route
 
 import (
+	"github/harryduong99/sitemate/apis/rest_issues"
 	"log"
 	"net/http"
-
-	"github/harryduong99/sitemate/apis/rest_issues"
 
 	"github.com/gorilla/mux"
 )
