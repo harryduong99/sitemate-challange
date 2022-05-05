@@ -5,6 +5,11 @@ import (
 	"net/http"
 )
 
+type ResponseFormater struct {
+	Success bool                   `json:"success"`
+	Data    map[string]interface{} `json:"data"`
+}
+
 func ResponseWithError(response http.ResponseWriter, statusCode int, msg string) {
 	ResponseWithJSON(response, statusCode, map[string]string{
 		"error": msg,

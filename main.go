@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
+	"github/harryduong99/sitemate/apis"
 )
 
 func main() {
-	router := mux.NewRouter()
+	apis.InitRoutes()
 
 }
